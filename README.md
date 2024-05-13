@@ -1,1 +1,2 @@
 # Visual_inspection_of_brake_pads
+主要使用opencv与wxwidgets来实现功能，代码最好在code::blocks中编写
