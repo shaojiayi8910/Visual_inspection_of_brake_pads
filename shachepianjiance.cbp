@@ -35,6 +35,10 @@
 		<Linker>
 			<Add option="`pkg-config --libs opencv4`" />
 		</Linker>
+		<Unit filename="rec/ProcessImage.cpp">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="rec/ProcessImage.h" />
 		<Unit filename="rec/contour.cpp" />
 		<Unit filename="rec/contour.h" />
 		<Unit filename="rec/main.cpp" />

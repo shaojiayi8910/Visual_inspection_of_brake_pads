@@ -1,12 +1,12 @@
-#include <opencv2/opencv.hpp>
+#include"ProcessImage.h"
 
-class ContourDetector {
+class ContourDetector : public ProcessImage
+{
 private:
-    cv::Mat image;
     double minArea;
-
 public:
-    ContourDetector(const std::string& filename, double minAreaThreshold);
+    ContourDetector(const std::string& filename,double minAreaThreshold);
     cv::Mat detectContours();
-
 };
+
+
