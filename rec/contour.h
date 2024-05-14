@@ -7,6 +7,6 @@ private:
 
 public:
     ContourDetector(const std::string& filename, double minAreaThreshold);
-    void detectContours();
+    cv::Mat detectContours();
 
 };

@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1715612554 source:c:\users\10696\desktop\shachepianjiance\rec\main.cpp
+1715656895 source:c:\users\10696\desktop\shachepianjiance\rec\main.cpp
 	<opencv2/opencv.hpp>
 	<iostream>
 	"contour.h"
@@ -644,6 +644,6 @@
 1692105227 d:\msys64\mingw64\include\opencv4\opencv2\video\background_segm.hpp
 	"opencv2/core.hpp"
 
-1715612807 c:\users\10696\desktop\shachepianjiance\rec\contour.h
+1715656895 c:\users\10696\desktop\shachepianjiance\rec\contour.h
 	<opencv2/opencv.hpp>
 

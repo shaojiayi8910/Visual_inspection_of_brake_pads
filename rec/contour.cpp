@@ -11,12 +11,12 @@ ContourDetector::ContourDetector(const std::string& filename, double minAreaThre
     }
 }
 
-void ContourDetector:: detectContours()
+cv:: Mat ContourDetector:: detectContours()
 {
     // 检查图像是否为空
     if (image.empty()) {
         std::cerr << "Error: Image is empty." << std::endl;
-        return;
+        return cv::Mat();
     }
 
     // 将图像转换为灰度图像
@@ -41,10 +41,7 @@ void ContourDetector:: detectContours()
         }
     }
 
-    // 显示包含轮廓的图像
-    cv::namedWindow("Contours on Original Image", cv::WINDOW_NORMAL);
-    cv::imshow("Contours on Original Image", image);
-    cv::waitKey(0);
+    return image;
 }
 
 
