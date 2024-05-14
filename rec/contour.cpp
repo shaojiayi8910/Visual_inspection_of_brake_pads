@@ -11,7 +11,7 @@ ContourDetector::ContourDetector(const std::string& filename, double minAreaThre
     }
 }
 
-cv:: Mat ContourDetector:: detectContours()
+cv:: Mat ContourDetector:: detectContours()//检测轮并绘制
 {
     // 检查图像是否为空
     if (image.empty()) {
