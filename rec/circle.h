@@ -15,6 +15,11 @@ public:
     cv::Point getCircleCenter1() const;
     cv::Point getCircleCenter2() const;
 
+    double getPixelsPerCm() const
+    {
+        return pixelsPerCm_;//得到像素比例
+    }
+
 private:
     std::vector<cv::Vec3f> circles_;
     double pixelsPerCm_;

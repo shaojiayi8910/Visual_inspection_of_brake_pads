@@ -1,9 +1,10 @@
 # depslib dependency file v1.0
-1715676869 source:c:\users\10696\desktop\shachepianjiance\rec\main.cpp
+1715689576 source:c:\users\10696\desktop\shachepianjiance\rec\main.cpp
 	<opencv2/opencv.hpp>
 	<iostream>
 	"contour.h"
 	"circle.h"
+	"LineDistanceCalculator.h"
 
 1692105227 d:\msys64\mingw64\include\opencv4\opencv2\opencv.hpp
 	"opencv2/opencv_modules.hpp"
@@ -645,10 +646,10 @@
 1692105227 d:\msys64\mingw64\include\opencv4\opencv2\video\background_segm.hpp
 	"opencv2/core.hpp"
 
-1715673315 c:\users\10696\desktop\shachepianjiance\rec\contour.h
+1715686490 c:\users\10696\desktop\shachepianjiance\rec\contour.h
 	"basefunc.h"
 
-1715673315 source:c:\users\10696\desktop\shachepianjiance\rec\contour.cpp
+1715686490 source:c:\users\10696\desktop\shachepianjiance\rec\contour.cpp
 	"contour.h"
 
 1715666697 c:\users\10696\desktop\shachepianjiance\rec\processimage.h
@@ -658,13 +659,21 @@
 1715666697 source:c:\users\10696\desktop\shachepianjiance\rec\processimage.cpp
 	"ProcessImage.h"
 
-1715677041 source:c:\users\10696\desktop\shachepianjiance\rec\circle.cpp
+1715689513 source:c:\users\10696\desktop\shachepianjiance\rec\circle.cpp
 	"circle.h"
 
-1715676236 c:\users\10696\desktop\shachepianjiance\rec\circle.h
+1715689441 c:\users\10696\desktop\shachepianjiance\rec\circle.h
 	<opencv2/opencv.hpp>
 
 1715672245 c:\users\10696\desktop\shachepianjiance\rec\basefunc.h
+	<opencv2/opencv.hpp>
+	<iostream>
+
+1715688206 source:c:\users\10696\desktop\shachepianjiance\rec\linedistancecalculator.cpp
+	"LineDistanceCalculator.h"
+	<iostream>
+
+1715687115 c:\users\10696\desktop\shachepianjiance\rec\linedistancecalculator.h
 	<opencv2/opencv.hpp>
 	<iostream>
 

@@ -2,36 +2,41 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Debug" />
-	<File name="rec\contour.cpp" open="1" top="1" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="261" topLine="9" />
-		</Cursor>
-	</File>
 	<File name="rec\contour.h" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="164" topLine="0" />
+			<Cursor1 position="0" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="rec\main.cpp" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="rec\circle.cpp" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="179" topLine="0" />
+			<Cursor1 position="895" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="rec\ProcessImage.cpp" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="rec\contour.cpp" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="287" topLine="0" />
+			<Cursor1 position="445" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="rec\ProcessImage.h" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="rec\main.cpp" open="1" top="1" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="78" topLine="0" />
+			<Cursor1 position="1265" topLine="0" />
 		</Cursor>
 	</File>
-	<Target name="Debug" top="rec\contour.cpp">
+	<File name="rec\basefunc.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="73" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="rec\circle.h" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="650" topLine="0" />
+		</Cursor>
+	</File>
+	<Target name="Debug" top="rec\main.cpp">
 		<File name="rec\main.cpp" />
 		<File name="rec\contour.h" />
 		<File name="rec\contour.cpp" />
-		<File name="rec\ProcessImage.h" />
-		<File name="rec\ProcessImage.cpp" />
+		<File name="rec\circle.h" />
+		<File name="rec\circle.cpp" />
 	</Target>
 </CodeBlocks_layout_file>

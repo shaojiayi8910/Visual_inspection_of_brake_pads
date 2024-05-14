@@ -2,6 +2,7 @@
 #include<iostream>
 #include"contour.h"
 #include"circle.h"
+#include "LineDistanceCalculator.h"
 using namespace std;
 using namespace cv;
 int main()
@@ -16,6 +17,9 @@ int main()
     cv::namedWindow("Contours on Original Image", cv::WINDOW_NORMAL);
     cv::imshow("Contours on Original Image", contourDetector.mimage);
 
+
+
+
     //////////////////圆孔距离的检测
     cv::Mat image = cv::imread("2.jpg");
     if (image.empty()) {
@@ -25,24 +29,32 @@ int main()
 
     // 创建圆检测器对象
     CircleDetector detector;
-
     // 检测圆孔
     detector.detectCircles(image);
-
-    // 绘制检测到的圆
+    // 绘制检测到的圆与圆心连线
     detector.drawDetectedCircles(image);
-
     // 计算每厘米的像素数
     double pixelsPerCm = detector.calculatePixelsPerCm();
-
     // 计算标尺的实际距离
     double circleDiameterInCm = detector.calculateDistance(detector.getCircleCenter1(), detector.getCircleCenter2()) / pixelsPerCm;
-
     std::cout << "Circle diameter in cm: " << circleDiameterInCm << std::endl;
-
     // 显示图像
     cv::namedWindow("Detected Circles", cv::WINDOW_NORMAL);
     cv::imshow("Detected Circles", image);
+
+
+
+    ///////////计算距离
+    cv::Mat image1 = cv::imread("contours_image.jpg");
+    if (image.empty()) {
+        std::cerr << "Error: Couldn't load image." << std::endl;
+        return 1;
+    }
+
+    LineDistanceCalculator calculator(image1);
+    cv::namedWindow("Image1", cv::WINDOW_NORMAL);
+    cv::imshow("Image1", image1);
+    cv::setMouseCallback("Image1", LineDistanceCalculator::onMouse, &calculator);
 
     waitKey(0);
     return 0;

@@ -35,6 +35,8 @@
 		<Linker>
 			<Add option="`pkg-config --libs opencv4`" />
 		</Linker>
+		<Unit filename="rec/LineDistanceCalculator.cpp" />
+		<Unit filename="rec/LineDistanceCalculator.h" />
 		<Unit filename="rec/basefunc.h" />
 		<Unit filename="rec/circle.cpp" />
 		<Unit filename="rec/circle.h" />

@@ -6,7 +6,8 @@ CircleDetector::CircleDetector() {
 CircleDetector::~CircleDetector() {
 }
 
-void CircleDetector::detectCircles(cv::Mat image) {
+void CircleDetector::detectCircles(cv::Mat image)
+{
     cv::Mat gray;
     cv::cvtColor(image, gray, cv::COLOR_BGR2GRAY);
     cv::GaussianBlur(gray, gray, cv::Size(9, 9), 2, 2);
@@ -44,6 +45,17 @@ void CircleDetector::drawDetectedCircles(cv::Mat& image) {
         // circle outline
         int radius = c[2];
         cv::circle(image, center, radius, cv::Scalar(0, 0, 255), 3, cv::LINE_AA);
+    }
+    // 绘制连接两个圆心的线
+    if (circleCenter1_.x && circleCenter2_.x) {
+        cv::line(image, circleCenter1_, circleCenter2_, cv::Scalar(0, 0, 255), 2);
+
+        // 计算两个圆心之间的距离
+        double distance = calculateDistance(circleCenter1_, circleCenter2_);
+
+        // 创建文本框显示距离
+        std::string distanceText = "Distance: " + std::to_string(distance/calculatePixelsPerCm()) + " cm";
+        cv::putText(image, distanceText, cv::Point(image.cols / 2, image.rows / 2), cv::FONT_HERSHEY_SIMPLEX, 3, cv::Scalar(0, 0, 255), 2);
     }
 }
 
