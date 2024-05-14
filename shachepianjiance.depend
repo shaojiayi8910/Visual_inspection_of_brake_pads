@@ -1,8 +1,9 @@
 # depslib dependency file v1.0
-1715662585 source:c:\users\10696\desktop\shachepianjiance\rec\main.cpp
+1715676869 source:c:\users\10696\desktop\shachepianjiance\rec\main.cpp
 	<opencv2/opencv.hpp>
 	<iostream>
 	"contour.h"
+	"circle.h"
 
 1692105227 d:\msys64\mingw64\include\opencv4\opencv2\opencv.hpp
 	"opencv2/opencv_modules.hpp"
@@ -644,16 +645,26 @@
 1692105227 d:\msys64\mingw64\include\opencv4\opencv2\video\background_segm.hpp
 	"opencv2/core.hpp"
 
-1715662854 c:\users\10696\desktop\shachepianjiance\rec\contour.h
-	"ProcessImage.h"
+1715673315 c:\users\10696\desktop\shachepianjiance\rec\contour.h
+	"basefunc.h"
 
-1715660040 source:c:\users\10696\desktop\shachepianjiance\rec\contour.cpp
+1715673315 source:c:\users\10696\desktop\shachepianjiance\rec\contour.cpp
 	"contour.h"
 
-1715662891 c:\users\10696\desktop\shachepianjiance\rec\processimage.h
+1715666697 c:\users\10696\desktop\shachepianjiance\rec\processimage.h
 	<opencv2/opencv.hpp>
 	<iostream>
 
-1715661532 source:c:\users\10696\desktop\shachepianjiance\rec\processimage.cpp
+1715666697 source:c:\users\10696\desktop\shachepianjiance\rec\processimage.cpp
 	"ProcessImage.h"
+
+1715677041 source:c:\users\10696\desktop\shachepianjiance\rec\circle.cpp
+	"circle.h"
+
+1715676236 c:\users\10696\desktop\shachepianjiance\rec\circle.h
+	<opencv2/opencv.hpp>
+
+1715672245 c:\users\10696\desktop\shachepianjiance\rec\basefunc.h
+	<opencv2/opencv.hpp>
+	<iostream>
 
