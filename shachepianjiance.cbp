@@ -57,6 +57,8 @@
 		<Unit filename="rec/circle.h" />
 		<Unit filename="rec/contour.cpp" />
 		<Unit filename="rec/contour.h" />
+		<Unit filename="rec/image_processing.cpp" />
+		<Unit filename="rec/image_processing.hpp" />
 		<Unit filename="rec/main.cpp" />
 		<Extensions />
 	</Project>
