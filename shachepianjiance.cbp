@@ -2,12 +2,12 @@
 <CodeBlocks_project_file>
 	<FileVersion major="1" minor="6" />
 	<Project>
-		<Option title="shachepianjiance" />
+		<Option title="shachepian" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="Debug">
-				<Option output="bin/Debug/shachepianjiance" prefix_auto="1" extension_auto="1" />
+				<Option output="bin/Debug/shachepian" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
@@ -16,7 +16,7 @@
 				</Compiler>
 			</Target>
 			<Target title="Release">
-				<Option output="bin/Release/shachepianjiance" prefix_auto="1" extension_auto="1" />
+				<Option output="bin/Release/shachepian" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj/Release/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
@@ -31,20 +31,33 @@
 		<Compiler>
 			<Add option="-Wall" />
 			<Add option="`pkg-config --cflags opencv4`" />
+			<Add option="D:\msys64\mingw64\include" />
+			<Add option="D:\msys64\mingw64\include\leptonica" />
+			<Add option="D:\msys64\mingw64\include\tesseract" />
+			<Add directory="D:/msys64/mingw64/include" />
+			<Add directory="D:/msys64/mingw64/include/leptonica" />
+			<Add directory="D:/msys64/mingw64/include/tesseract" />
 		</Compiler>
 		<Linker>
 			<Add option="`pkg-config --libs opencv4`" />
+			<Add library="tesseract" />
+			<Add library="leptonica" />
+			<Add directory="D:/msys64/mingw64/lib" />
 		</Linker>
+		<Unit filename="rec/ImageAnnotator.cpp" />
+		<Unit filename="rec/ImageAnnotator.h" />
 		<Unit filename="rec/LineDistanceCalculator.cpp" />
 		<Unit filename="rec/LineDistanceCalculator.h" />
+		<Unit filename="rec/OCRProcessor.cpp" />
+		<Unit filename="rec/OCRProcessor.h" />
+		<Unit filename="rec/RustDetection.cpp" />
+		<Unit filename="rec/RustDetection.h" />
 		<Unit filename="rec/basefunc.h" />
 		<Unit filename="rec/circle.cpp" />
 		<Unit filename="rec/circle.h" />
 		<Unit filename="rec/contour.cpp" />
 		<Unit filename="rec/contour.h" />
 		<Unit filename="rec/main.cpp" />
-		<Extensions>
-			<lib_finder disable_auto="1" />
-		</Extensions>
+		<Extensions />
 	</Project>
 </CodeBlocks_project_file>

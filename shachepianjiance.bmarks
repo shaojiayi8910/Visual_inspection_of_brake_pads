@@ -4,28 +4,26 @@
 	<File name="rec\contour.h" open="1" top="0" tabpos="2">
 		<Cursor position="299" topLine="0" />
 	</File>
-	<File name="rec\main.cpp" open="1" top="0" tabpos="1">
-		<Cursor position="1414" topLine="0" />
-		<BrowseMarks positions="1876" />
+	<File name="rec\basefunc.h" open="0" top="0" tabpos="0">
+		<Cursor position="73" topLine="0" />
 	</File>
-	<File name="rec\circle.cpp" open="1" top="0" tabpos="5">
-		<Cursor position="1937" topLine="54" />
+	<File name="rec\main.cpp" open="1" top="1" tabpos="1">
+		<Cursor position="106" topLine="66" />
+		<BrowseMarks positions="" />
 	</File>
-	<File name="rec\circle.h" open="1" top="0" tabpos="4">
-		<Cursor position="615" topLine="10" />
+	<File name="rec\LineDistanceCalculator.h" open="0" top="0" tabpos="5">
+		<Cursor position="331" topLine="0" />
 	</File>
 	<File name="rec\contour.cpp" open="1" top="0" tabpos="3">
 		<Cursor position="757" topLine="6" />
 	</File>
-	<File name="rec\basefunc.h" open="0" top="0" tabpos="0">
-		<Cursor position="73" topLine="0" />
-	</File>
-	<File name="rec\LineDistanceCalculator.cpp" open="1" top="0" tabpos="7">
+	<File name="rec\LineDistanceCalculator.cpp" open="0" top="0" tabpos="6">
 		<Cursor position="431" topLine="0" />
-		<BrowseMarks positions="" />
 	</File>
-	<File name="rec\LineDistanceCalculator.h" open="1" top="1" tabpos="6">
-		<Cursor position="331" topLine="0" />
-		<BrowseMarks positions="" />
+	<File name="rec\circle.cpp" open="0" top="0" tabpos="4">
+		<Cursor position="1937" topLine="54" />
+	</File>
+	<File name="rec\circle.h" open="1" top="0" tabpos="4">
+		<Cursor position="615" topLine="10" />
 	</File>
 </BrowseTracker_layout_file>
