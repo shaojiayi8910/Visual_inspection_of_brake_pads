@@ -13,7 +13,7 @@ using namespace cv;
 
 int main() {
 
-    //计算羊角距离
+    //计算羊角距离，主要是内侧距离
     cv::Mat contours_image = cv::imread("contours_image.jpg");
     if (contours_image.empty()) {
         std::cerr << "Error: Couldn't load contours_image ! ." << std::endl;
