@@ -1,4 +1,4 @@
-#include <opencv2/opencv.hpp>
+ï»¿#include <opencv2/opencv.hpp>
 #include<iostream>
 #include "RustDetection.h"
 #include "OCRProcessor.h"
@@ -13,7 +13,7 @@ using namespace cv;
 
 int main() {
 
-    //¼ÆËãÑò½Ç¾àÀë
+    //è®¡ç®—ç¾Šè§’è·ç¦»
     cv::Mat contours_image = cv::imread("contours_image.jpg");
     if (contours_image.empty()) {
         std::cerr << "Error: Couldn't load contours_image ! ." << std::endl;
@@ -26,33 +26,33 @@ int main() {
     //cv::setMouseCallback("Image1", LineDistanceCalculator::onMouse, &calculator);
 
 
-    //Ô²¿×¾àÀëµÄ¼ì²â
+    //åœ†å­”è·ç¦»çš„æ£€æµ‹
     cv::Mat image_circle = cv::imread("coumpter_circle.jpg");
     if (image_circle.empty()) {
        std::cerr << "Failed to load image  coumpter_circle ! ." << std::endl;
         return -1;
     }
 
-    // ´´½¨ ContourDetector ¶ÔÏó
+    // åˆ›å»º ContourDetector å¯¹è±¡
     ContourDetector contourDetector("coumpter_circle.jpg",170.00);
-    // ¼ì²âÂÖÀª
+    // æ£€æµ‹è½®å»“
     contourDetector.detectContours();
-        // ÏÔÊ¾°üº¬ÂÖÀªµÄÍ¼Ïñ
+        // æ˜¾ç¤ºåŒ…å«è½®å»“çš„å›¾åƒ
     cv::namedWindow("Contours on Original Image", cv::WINDOW_NORMAL);
    // cv::imshow("Contours on Original Image", contourDetector.mimage);
 
-    // ´´½¨Ô²¼ì²âÆ÷¶ÔÏó
+    // åˆ›å»ºåœ†æ£€æµ‹å™¨å¯¹è±¡
     CircleDetector detector;
-    // ¼ì²âÔ²¿×
+    // æ£€æµ‹åœ†å­”
     detector.detectCircles(image_circle);
-    // »æÖÆ¼ì²âµ½µÄÔ²ÓëÔ²ĞÄÁ¬Ïß
+    // ç»˜åˆ¶æ£€æµ‹åˆ°çš„åœ†ä¸åœ†å¿ƒè¿çº¿
     detector.drawDetectedCircles(image_circle);
-    // ¼ÆËãÃ¿ÀåÃ×µÄÏñËØÊı
+    // è®¡ç®—æ¯å˜ç±³çš„åƒç´ æ•°
     double pixelsPerCm = detector.calculatePixelsPerCm();
-    // ¼ÆËã±ê³ßµÄÊµ¼Ê¾àÀë
+    // è®¡ç®—æ ‡å°ºçš„å®é™…è·ç¦»
     double circleDiameterInCm = detector.calculateDistance(detector.getCircleCenter1(), detector.getCircleCenter2()) / pixelsPerCm;
     std::cout << "Circle diameter in cm: " << circleDiameterInCm << std::endl;
-    // ÏÔÊ¾Í¼Ïñ
+    // æ˜¾ç¤ºå›¾åƒ
     cv::namedWindow("Detected Circles", cv::WINDOW_NORMAL);
    // cv::imshow("Detected Circles", image2);
 
@@ -62,43 +62,43 @@ int main() {
         return -1;
     }
 
-    //×Ö·ûÊ¶±ğ
+    //å­—ç¬¦è¯†åˆ«
     OCRProcessor ocrProcessor("eng");
     std::string recognizedText = ocrProcessor.performOCR(image_original);
-    std::cout << "Recognized characters: \n" << recognizedText << std::endl;
+    std::cout << "è¯†åˆ«recognized string:: \n" << recognizedText << std::endl;
 
-    // ±ê×¢Ê¶±ğ×Ö·ûÔÚÔ­Í¼µÄÎ»ÖÃ
+    // æ ‡æ³¨è¯†åˆ«å­—ç¬¦åœ¨åŸå›¾çš„ä½ç½®
     ImageAnnotator::annotateImage(image_original, recognizedText);
 
-    //¼ÆËãÌúĞâ×ÜÃæ»ı²¢Êä³ö
+    //è®¡ç®—é“é”ˆæ€»é¢ç§¯å¹¶è¾“å‡º
     double totalArea;
     detectRust(image_original, totalArea);
 
-    //ËõĞ¡ÏÔÊ¾×Ö·ûºÍÌúĞâÃæ»ı´°¿ÚµÄ´óĞ¡
+    //ç¼©å°æ˜¾ç¤ºå­—ç¬¦å’Œé“é”ˆé¢ç§¯çª—å£çš„å¤§å°
     cv::namedWindow("Result_image", cv::WINDOW_NORMAL);
     cv::resizeWindow("Result_image", image_original.cols / 4, image_original.rows / 4);
 
-    // ¶ÁÈ¡Í¼Ïñ
+    // è¯»å–å›¾åƒ
     Mat image = imread("Scratch_detection.jpg");
-    Mat color_image = image.clone(); // ¸´ÖÆ²ÊÉ«Í¼ÏñÓÃÓÚ»æÖÆÖ±Ïß
-    // »®ºÛÍ¼Ïñ´¦Àí
+    Mat color_image = image.clone(); // å¤åˆ¶å½©è‰²å›¾åƒç”¨äºç»˜åˆ¶ç›´çº¿
+    // åˆ’ç—•å›¾åƒå¤„ç†
     processImage(image, color_image);
 
 
-    //ÏÔÊ¾Ô­Í¼ÂÖÀª
+    //æ˜¾ç¤ºåŸå›¾è½®å»“
     cv::imshow("Contours on Original Image", contourDetector.mimage);
 
-    //µã»÷Êó±ê²âÁ¿Ñò½Ç³ß´ç
+    //ç‚¹å‡»é¼ æ ‡æµ‹é‡ç¾Šè§’å°ºå¯¸
     cv::imshow("Coumpter Distance(click mouse)", contours_image);
     cv::setMouseCallback("Coumpter Distance(click mouse)", LineDistanceCalculator::onMouse, &calculator);
 
-    //²âÁ¿Ô²ĞÄ¾àÀë
+    //æµ‹é‡åœ†å¿ƒè·ç¦»
     cv::imshow("Detected Circles", image_circle);
 
-    //ÔÚÍ¼Æ¬ÉÏÏÔÊ¾×Ö·û¡¢ÌúĞâÃæ»ıºÍ´óĞ¡
+    //åœ¨å›¾ç‰‡ä¸Šæ˜¾ç¤ºå­—ç¬¦ã€é“é”ˆé¢ç§¯å’Œå¤§å°
     cv::imshow("Result_image", image_original);
 
-    // ÏÔÊ¾»®ºÛ
+    // æ˜¾ç¤ºåˆ’ç—•
     imshow("Detected Lines", color_image);
 
     cv::waitKey(0);

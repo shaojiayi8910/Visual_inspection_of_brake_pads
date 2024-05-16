@@ -1,11 +1,11 @@
 #include "image_processing.hpp"
 
 void processImage(const Mat& image, Mat& color_image) {
-    // ½«Í¼Ïñ×ª»»Îª»Ò¶ÈÍ¼Ïñ
+    // å°†å›¾åƒè½¬æ¢ä¸ºç°åº¦å›¾åƒã€‚
     Mat gray;
     cvtColor(image, gray, COLOR_BGR2GRAY);
 
-    // ½«»Ò¶È·¶Î§Îª30-80µÄ²¿·ÖÌáÈ¡³öÀ´
+    // å°†ç°åº¦èŒƒå›´ä¸º30-80çš„éƒ¨åˆ†æå–å‡ºæ¥
     int min_gray = 30;
     int max_gray = 80;
     Mat masked_image = Mat::zeros(gray.size(), CV_8UC1);
@@ -17,28 +17,28 @@ void processImage(const Mat& image, Mat& color_image) {
         }
     }
 
-    // ¶ÔÌáÈ¡³öÀ´µÄ²¿·Ö½øĞĞÖ±·½Í¼¾ùºâ»¯
+    // å¯¹æå–å‡ºæ¥çš„éƒ¨åˆ†è¿›è¡Œç›´æ–¹å›¾å‡è¡¡åŒ–
     Mat equalized_masked_image;
     equalizeHist(masked_image, equalized_masked_image);
 
-    // Ê¹ÓÃãĞÖµ·Ö¸î½«Í¼Ïñ¶şÖµ»¯
+    // ä½¿ç”¨é˜ˆå€¼åˆ†å‰²å°†å›¾åƒäºŒå€¼åŒ–
     int threshold_value = 70; // Renamed to avoid conflict
     Mat output_image;
     threshold(gray, output_image, threshold_value, 255, THRESH_BINARY);
 
-    // ¶Ô¶şÖµ»¯Í¼Ïñ½øĞĞÅòÕÍ²Ù×÷
+    // å¯¹äºŒå€¼åŒ–å›¾åƒè¿›è¡Œè†¨èƒ€æ“ä½œ
     Mat kernel = getStructuringElement(MORPH_RECT, Size(2, 2));
     dilate(output_image, output_image, kernel, Point(-1, -1), 2);
 
-    // Ê¹ÓÃCanny±ßÔµ¼ì²â
+    // ä½¿ç”¨Cannyè¾¹ç¼˜æ£€æµ‹
     Mat edges;
     Canny(output_image, edges, 1, 300, 3);
 
-    // Ö´ĞĞ¸ÅÂÊ»ô·òÖ±Ïß¼ì²â
+    // æ‰§è¡Œæ¦‚ç‡éœå¤«ç›´çº¿æ£€æµ‹
     std::vector<Vec4i> lines;
     HoughLinesP(edges, lines, 1, CV_PI / 180, 1, 90, 8);
 
-    // ÔÚ²ÊÉ«Í¼ÏñÉÏ»æÖÆÖ±Ïß
+    // åœ¨å½©è‰²å›¾åƒä¸Šç»˜åˆ¶ç›´çº¿
     if (!lines.empty()) {
         for (size_t i = 0; i < lines.size(); i++) {
             Vec4i l = lines[i];

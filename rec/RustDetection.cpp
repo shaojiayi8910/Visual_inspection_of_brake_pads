@@ -32,54 +32,54 @@ float computeTextureFeature(const cv::Mat& glcm)
 
 void detectRust(const cv::Mat& src, double& totalArea)
 {
-    // ×ª»»ÑÕÉ«¿Õ¼äµ½HSV
+    // è½¬æ¢é¢œè‰²ç©ºé—´åˆ°HSVã€‚
     cv::Mat hsv;
     cv::cvtColor(src, hsv, cv::COLOR_BGR2HSV);
 
-    // Éè¶¨ÑÕÉ«ãĞÖµ£¬ÕâÀï¼ÙÉèÌúĞâµÄÑÕÉ«ÔÚH:0-34, S:36, V:36·¶Î§ÄÚ
+    // è®¾å®šé¢œè‰²é˜ˆå€¼ï¼Œè¿™é‡Œå‡è®¾é“é”ˆçš„é¢œè‰²åœ¨H:0-34, S:36, V:36èŒƒå›´å†…
     cv::Mat mask;
     cv::inRange(hsv, cv::Scalar(0, 46, 46), cv::Scalar(28, 255, 255), mask);
 
-    // ĞÎÌ¬Ñ§²Ù×÷£¬È¥³ıÔëÉù£¬²¢Ê¹ÌúĞâÇøÓòÁ¬Í¨
+    // å½¢æ€å­¦æ“ä½œï¼Œå»é™¤å™ªå£°ï¼Œå¹¶ä½¿é“é”ˆåŒºåŸŸè¿é€š
     cv::Mat kernel = cv::getStructuringElement(cv::MORPH_RECT, cv::Size(3, 3));
     cv::morphologyEx(mask, mask, cv::MORPH_OPEN, kernel);
     cv::morphologyEx(mask, mask, cv::MORPH_DILATE, kernel);
 
-    // Ñ°ÕÒÂÖÀª
+    // å¯»æ‰¾è½®å»“
     std::vector<std::vector<cv::Point>> contours;
     cv::findContours(mask, contours, cv::RETR_EXTERNAL, cv::CHAIN_APPROX_SIMPLE);
 
-    // ¶ÔÂÖÀª½øĞĞÃæ»ı¹ıÂË£¬ÌŞ³ıĞ¡Ãæ»ıµÄÌúĞâÇøÓò
+    // å¯¹è½®å»“è¿›è¡Œé¢ç§¯è¿‡æ»¤ï¼Œå‰”é™¤å°é¢ç§¯çš„é“é”ˆåŒºåŸŸ
     std::vector<std::vector<cv::Point>> filteredContours;
-    double pixelToCmRatio = 0.00624; // ¼ÙÉèÃ¿¸öÏñËØ´ú±í0.1ÀåÃ×
-    totalArea = 0; // ÓÃÓÚ´æ´¢×ÜÃæ»ı
+    double pixelToCmRatio = 0.00624; // å‡è®¾æ¯ä¸ªåƒç´ ä»£è¡¨0.1å˜ç±³
+    totalArea = 0; // ç”¨äºå­˜å‚¨æ€»é¢ç§¯
     for (const auto& contour : contours)
     {
         double area = cv::contourArea(contour);
-        double actualArea = area * pixelToCmRatio * pixelToCmRatio; // ½«ÏñËØÃæ»ı×ª»»ÎªÊµ¼ÊÃæ»ı
-        if (actualArea >= 0.09 && actualArea <= 5) // ¸ù¾İĞèÇóµ÷ÕûÃæ»ıãĞÖµ
+        double actualArea = area * pixelToCmRatio * pixelToCmRatio; // å°†åƒç´ é¢ç§¯è½¬æ¢ä¸ºå®é™…é¢ç§¯
+        if (actualArea >= 0.09 && actualArea <= 5) // æ ¹æ®éœ€æ±‚è°ƒæ•´é¢ç§¯é˜ˆå€¼
         {
             filteredContours.push_back(contour);
 
-            // ÀÛ¼ÓÊµ¼ÊÃæ»ı
+            // ç´¯åŠ å®é™…é¢ç§¯
             totalArea += actualArea;
 
-            // ÔÚÍ¼ÏñÉÏÏÔÊ¾Êµ¼ÊÃæ»ıĞÅÏ¢
+            // åœ¨å›¾åƒä¸Šæ˜¾ç¤ºå®é™…é¢ç§¯ä¿¡æ¯
             std::string areaText = std::to_string(actualArea) + " cm^2";
             cv::putText(src, areaText, contour[0], cv::FONT_HERSHEY_SIMPLEX, 1, cv::Scalar(0, 255, 255), 2);
         }
     }
 
-    // Êä³ö×ÜÃæ»ı
+    // è¾“å‡ºæ€»é¢ç§¯
     std::cout << "Total Area: " << totalArea << " cm^2" << std::endl;
 
-    // ÔÚÔ­Í¼ÉÏ»æÖÆ¾­¹ıÃæ»ı¹ıÂËµÄÂÖÀª
+    // åœ¨åŸå›¾ä¸Šç»˜åˆ¶ç»è¿‡é¢ç§¯è¿‡æ»¤çš„è½®å»“
     cv::drawContours(src, filteredContours, -1, cv::Scalar(0, 255, 255), 2);
 
-    // ¼ÆËã»Ò¶È¹²Éú¾ØÕó
+    // è®¡ç®—ç°åº¦å…±ç”ŸçŸ©é˜µ
     cv::Mat glcm = computeGLCM(src, 1, 0);
 
-    // ¼ÆËãÎÆÀíÌØÕ÷
+    // è®¡ç®—çº¹ç†ç‰¹å¾
     //float contrast = computeTextureFeature(glcm);
     //std::cout << "Contrast: " << contrast << std::endl;
 }

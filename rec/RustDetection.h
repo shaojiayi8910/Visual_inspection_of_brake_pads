@@ -7,4 +7,4 @@ cv::Mat computeGLCM(const cv::Mat& src, int dx, int dy);
 float computeTextureFeature(const cv::Mat& glcm);
 void detectRust(const cv::Mat& src, double& totalArea);
 
-#endif // RUST_DETECTION_HPP
+#endif 
