@@ -65,7 +65,7 @@ int main() {
     //字符识别
     OCRProcessor ocrProcessor("eng");
     std::string recognizedText = ocrProcessor.performOCR(image_original);
-    std::cout << "识别的字符: \n" << recognizedText << std::endl;
+    std::cout << "Recognized characters: \n" << recognizedText << std::endl;
 
     // 标注识别字符在原图的位置
     ImageAnnotator::annotateImage(image_original, recognizedText);

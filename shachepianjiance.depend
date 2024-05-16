@@ -2262,3 +2262,54 @@
 	"RustDetection.h"
 	<iostream>
 
+1715843625 source:c:\users\sunshine\desktop\visual_inspection_of_brake_pads\rec\circle.cpp
+	"circle.h"
+
+1715843625 c:\users\sunshine\desktop\visual_inspection_of_brake_pads\rec\circle.h
+	<opencv2/opencv.hpp>
+
+1715843625 source:c:\users\sunshine\desktop\visual_inspection_of_brake_pads\rec\contour.cpp
+	"contour.h"
+
+1715843625 c:\users\sunshine\desktop\visual_inspection_of_brake_pads\rec\contour.h
+	"basefunc.h"
+
+1715843625 c:\users\sunshine\desktop\visual_inspection_of_brake_pads\rec\basefunc.h
+	<opencv2/opencv.hpp>
+	<iostream>
+
+1715842907 source:c:\users\sunshine\desktop\visual_inspection_of_brake_pads\rec\image_processing.cpp
+	"image_processing.hpp"
+
+1715842895 c:\users\sunshine\desktop\visual_inspection_of_brake_pads\rec\image_processing.hpp
+	<opencv2/opencv.hpp>
+
+1715843625 source:c:\users\sunshine\desktop\visual_inspection_of_brake_pads\rec\imageannotator.cpp
+	"ImageAnnotator.h"
+
+1715843625 c:\users\sunshine\desktop\visual_inspection_of_brake_pads\rec\imageannotator.h
+	<opencv2/opencv.hpp>
+
+1715843625 source:c:\users\sunshine\desktop\visual_inspection_of_brake_pads\rec\linedistancecalculator.cpp
+	"LineDistanceCalculator.h"
+	<iostream>
+
+1715843625 c:\users\sunshine\desktop\visual_inspection_of_brake_pads\rec\linedistancecalculator.h
+	<opencv2/opencv.hpp>
+	<iostream>
+
+1715843625 source:c:\users\sunshine\desktop\visual_inspection_of_brake_pads\rec\ocrprocessor.cpp
+	"OCRProcessor.h"
+	<leptonica/allheaders.h>
+
+1715843625 c:\users\sunshine\desktop\visual_inspection_of_brake_pads\rec\ocrprocessor.h
+	<opencv2/opencv.hpp>
+	<tesseract/baseapi.h>
+
+1715843625 source:c:\users\sunshine\desktop\visual_inspection_of_brake_pads\rec\rustdetection.cpp
+	"RustDetection.h"
+	<iostream>
+
+1715843625 c:\users\sunshine\desktop\visual_inspection_of_brake_pads\rec\rustdetection.h
+	<opencv2/opencv.hpp>
+
