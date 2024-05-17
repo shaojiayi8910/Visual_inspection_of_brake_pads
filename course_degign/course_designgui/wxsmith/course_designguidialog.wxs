@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<wxsmith>
+	<object class="wxDialog" name="course_designguiDialog">
+		<title>wxWidgets app</title>
+		<size>1215,858</size>
+		<id_arg>0</id_arg>
+		<handler function="OnInit" entry="EVT_INIT_DIALOG" />
+		<object class="wxButton" name="ID_BUTTON2" variable="Button2" member="yes">
+			<label>detect picture</label>
+			<pos>8,824</pos>
+			<handler function="OnButton2Click" entry="EVT_BUTTON" />
+		</object>
+		<object class="wxStaticBitmap" name="ID_STATICBITMAP1" variable="StaticBitmap1" member="yes">
+			<pos>8,0</pos>
+			<size>504,304</size>
+			<bg>wxSYS_COLOUR_BACKGROUND</bg>
+		</object>
+		<object class="wxStaticBitmap" name="ID_STATICBITMAP2" variable="StaticBitmap2" member="yes">
+			<pos>592,0</pos>
+			<size>592,336</size>
+			<bg>wxSYS_COLOUR_BACKGROUND</bg>
+		</object>
+		<object class="wxStaticBitmap" name="ID_STATICBITMAP3" variable="StaticBitmap3" member="yes">
+			<pos>8,392</pos>
+			<size>504,360</size>
+			<bg>wxSYS_COLOUR_BACKGROUND</bg>
+		</object>
+		<object class="wxTextCtrl" name="ID_TEXTCTRL1" variable="TextCtrl1" member="yes">
+			<value>Detected__Lines</value>
+			<pos>120,352</pos>
+			<enabled>0</enabled>
+		</object>
+		<object class="wxTextCtrl" name="ID_TEXTCTRL2" variable="TextCtrl2" member="yes">
+			<value>Contours on Original Image</value>
+			<pos>648,352</pos>
+			<size>264,32</size>
+			<enabled>0</enabled>
+		</object>
+		<object class="wxTextCtrl" name="ID_TEXTCTRL3" variable="TextCtrl3" member="yes">
+			<value>Detected Circles</value>
+			<pos>136,760</pos>
+			<enabled>0</enabled>
+		</object>
+		<object class="wxTextCtrl" name="ID_TEXTCTRL4" variable="TextCtrl4" member="yes">
+			<value>circle diameter:</value>
+			<pos>488,816</pos>
+			<size>160,32</size>
+			<enabled>0</enabled>
+			<handler function="OnTextCtrl4Text" entry="EVT_TEXT" />
+		</object>
+		<object class="wxTextCtrl" name="ID_TEXTCTRL5" variable="TextCtrl5" member="yes">
+			<value>recognizedText:</value>
+			<pos>864,816</pos>
+			<size>144,32</size>
+			<enabled>0</enabled>
+			<handler function="OnTextCtrl5Text" entry="EVT_TEXT" />
+		</object>
+		<object class="wxTextCtrl" name="ID_TEXTCTRL6" variable="TextCtrl6" member="yes">
+			<pos>656,816</pos>
+			<enabled>0</enabled>
+			<handler function="OnTextCtrl6Text" entry="EVT_TEXT" />
+		</object>
+		<object class="wxTextCtrl" name="ID_TEXTCTRL7" variable="TextCtrl7" member="yes">
+			<pos>1024,816</pos>
+			<enabled>0</enabled>
+		</object>
+		<object class="wxTextCtrl" name="ID_TEXTCTRL8" variable="TextCtrl8" member="yes">
+			<value>Result__image</value>
+			<pos>744,768</pos>
+			<enabled>0</enabled>
+		</object>
+		<object class="wxStaticBitmap" name="ID_STATICBITMAP4" variable="StaticBitmap4" member="yes">
+			<pos>584,400</pos>
+			<size>616,344</size>
+			<bg>wxSYS_COLOUR_BACKGROUND</bg>
+		</object>
+		<object class="wxTextCtrl" name="ID_TEXTCTRL9" variable="TextCtrl9" member="yes">
+			<value>totalArea:</value>
+			<pos>184,824</pos>
+			<size>104,32</size>
+			<enabled>0</enabled>
+		</object>
+		<object class="wxTextCtrl" name="ID_TEXTCTRL10" variable="TextCtrl10" member="yes">
+			<pos>304,824</pos>
+			<enabled>0</enabled>
+		</object>
+	</object>
+</wxsmith>
