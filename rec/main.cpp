@@ -54,8 +54,17 @@ int main() {
     std::cout << "Circle diameter in cm: " << circleDiameterInCm << std::endl;
     // 显示图像
     cv::namedWindow("Detected Circles", cv::WINDOW_NORMAL);
-   // cv::imshow("Detected Circles", image2);
+    cv::imshow("Detected Circles", image_circle);
 
+      bool success = cv::imwrite("Detected Circles.jpg", image_circle);
+    if (!success)
+        {
+            std::cerr << "Failed to save image." << std::endl;
+        }
+    else
+        {
+            std::cout << "Image saved successfully." << std::endl;
+        }
     cv::Mat image_original = cv::imread("shachepian.jpg");
     if (image_original.empty()) {
         std::cerr << "Error: Couldn't load image shachepian ! ." << std::endl;

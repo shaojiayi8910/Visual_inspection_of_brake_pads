@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="course_designgui" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/course_designgui" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Option projectLinkerOptionsRelation="2" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/course_designgui" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Option projectLinkerOptionsRelation="2" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="`$(#WX_CONFIG) --cflags`" />
+			<Add option="-Wall" />
+			<Add option="`pkg-config --cflags opencv4`" />
+		</Compiler>
+		<ResourceCompiler>
+			<Add option="`$(#WX_CONFIG) --rcflags`" />
+		</ResourceCompiler>
+		<Linker>
+			<Add option="`$(#WX_CONFIG) --libs`" />
+			<Add option="`pkg-config --libs opencv4`" />
+		</Linker>
+		<Unit filename="ImageAnnotator.cpp" />
+		<Unit filename="ImageAnnotator.h" />
+		<Unit filename="LineDistanceCalculator.cpp" />
+		<Unit filename="LineDistanceCalculator.h" />
+		<Unit filename="OCRProcessor.cpp" />
+		<Unit filename="OCRProcessor.h" />
+		<Unit filename="RustDetection.cpp" />
+		<Unit filename="RustDetection.h" />
+		<Unit filename="basefunc.h" />
+		<Unit filename="circle.cpp" />
+		<Unit filename="circle.h" />
+		<Unit filename="contour.cpp" />
+		<Unit filename="contour.h" />
+		<Unit filename="course_designguiApp.cpp" />
+		<Unit filename="course_designguiApp.h" />
+		<Unit filename="course_designguiMain.cpp" />
+		<Unit filename="course_designguiMain.h" />
+		<Unit filename="image_processing.cpp" />
+		<Unit filename="image_processing.hpp" />
+		<Unit filename="resource.rc">
+			<Option compilerVar="WINDRES" />
+		</Unit>
+		<Unit filename="wxsmith/course_designguidialog.wxs" />
+		<Extensions>
+			<wxsmith version="1">
+				<gui name="wxWidgets" src="course_designguiApp.cpp" main="course_designguiDialog" init_handlers="necessary" language="CPP" />
+				<resources>
+					<wxDialog wxs="wxsmith/course_designguidialog.wxs" src="course_designguiMain.cpp" hdr="course_designguiMain.h" fwddecl="0" i18n="1" name="course_designguiDialog" language="CPP" />
+				</resources>
+			</wxsmith>
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
