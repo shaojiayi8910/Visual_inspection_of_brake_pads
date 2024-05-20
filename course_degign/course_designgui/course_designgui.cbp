@@ -40,6 +40,8 @@
 		</ResourceCompiler>
 		<Linker>
 			<Add option="`$(#WX_CONFIG) --libs`" />
+			<Add library="tesseract" />
+			<Add library="leptonica" />
 			<Add option="`pkg-config --libs opencv4`" />
 		</Linker>
 		<Unit filename="ImageAnnotator.cpp" />
