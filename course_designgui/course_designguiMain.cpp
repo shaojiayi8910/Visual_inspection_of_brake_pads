@@ -55,21 +55,21 @@ wxString wxbuildinfo(wxbuildinfoformat format)
 }
 
 //(*IdInit(course_designguiDialog)
-const wxWindowID course_designguiDialog::ID_BUTTON2 = wxNewId();
-const wxWindowID course_designguiDialog::ID_STATICBITMAP1 = wxNewId();
-const wxWindowID course_designguiDialog::ID_STATICBITMAP2 = wxNewId();
-const wxWindowID course_designguiDialog::ID_STATICBITMAP3 = wxNewId();
-const wxWindowID course_designguiDialog::ID_TEXTCTRL1 = wxNewId();
-const wxWindowID course_designguiDialog::ID_TEXTCTRL2 = wxNewId();
-const wxWindowID course_designguiDialog::ID_TEXTCTRL3 = wxNewId();
-const wxWindowID course_designguiDialog::ID_TEXTCTRL4 = wxNewId();
-const wxWindowID course_designguiDialog::ID_TEXTCTRL5 = wxNewId();
-const wxWindowID course_designguiDialog::ID_TEXTCTRL6 = wxNewId();
-const wxWindowID course_designguiDialog::ID_TEXTCTRL7 = wxNewId();
-const wxWindowID course_designguiDialog::ID_TEXTCTRL8 = wxNewId();
-const wxWindowID course_designguiDialog::ID_STATICBITMAP4 = wxNewId();
-const wxWindowID course_designguiDialog::ID_TEXTCTRL9 = wxNewId();
-const wxWindowID course_designguiDialog::ID_TEXTCTRL10 = wxNewId();
+const long course_designguiDialog::ID_BUTTON2 = wxNewId();
+const long course_designguiDialog::ID_STATICBITMAP1 = wxNewId();
+const long course_designguiDialog::ID_STATICBITMAP2 = wxNewId();
+const long course_designguiDialog::ID_STATICBITMAP3 = wxNewId();
+const long course_designguiDialog::ID_TEXTCTRL1 = wxNewId();
+const long course_designguiDialog::ID_TEXTCTRL2 = wxNewId();
+const long course_designguiDialog::ID_TEXTCTRL3 = wxNewId();
+const long course_designguiDialog::ID_TEXTCTRL4 = wxNewId();
+const long course_designguiDialog::ID_TEXTCTRL5 = wxNewId();
+const long course_designguiDialog::ID_TEXTCTRL6 = wxNewId();
+const long course_designguiDialog::ID_TEXTCTRL7 = wxNewId();
+const long course_designguiDialog::ID_TEXTCTRL8 = wxNewId();
+const long course_designguiDialog::ID_STATICBITMAP4 = wxNewId();
+const long course_designguiDialog::ID_TEXTCTRL9 = wxNewId();
+const long course_designguiDialog::ID_TEXTCTRL10 = wxNewId();
 //*)
 
 BEGIN_EVENT_TABLE(course_designguiDialog,wxDialog)
@@ -113,11 +113,11 @@ course_designguiDialog::course_designguiDialog(wxWindow* parent,wxWindowID id)
     TextCtrl10 = new wxTextCtrl(this, ID_TEXTCTRL10, wxEmptyString, wxPoint(304,824), wxDefaultSize, 0, wxDefaultValidator, _T("ID_TEXTCTRL10"));
     TextCtrl10->Disable();
 
-    Connect(ID_BUTTON2, wxEVT_COMMAND_BUTTON_CLICKED, (wxObjectEventFunction)&course_designguiDialog::OnButton2Click);
-    Connect(ID_TEXTCTRL4, wxEVT_COMMAND_TEXT_UPDATED, (wxObjectEventFunction)&course_designguiDialog::OnTextCtrl4Text);
-    Connect(ID_TEXTCTRL5, wxEVT_COMMAND_TEXT_UPDATED, (wxObjectEventFunction)&course_designguiDialog::OnTextCtrl5Text);
-    Connect(ID_TEXTCTRL6, wxEVT_COMMAND_TEXT_UPDATED, (wxObjectEventFunction)&course_designguiDialog::OnTextCtrl6Text);
-    Connect(wxID_ANY, wxEVT_INIT_DIALOG, (wxObjectEventFunction)&course_designguiDialog::OnInit);
+    Connect(ID_BUTTON2,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&course_designguiDialog::OnButton2Click);
+    Connect(ID_TEXTCTRL4,wxEVT_COMMAND_TEXT_UPDATED,(wxObjectEventFunction)&course_designguiDialog::OnTextCtrl4Text);
+    Connect(ID_TEXTCTRL5,wxEVT_COMMAND_TEXT_UPDATED,(wxObjectEventFunction)&course_designguiDialog::OnTextCtrl5Text);
+    Connect(ID_TEXTCTRL6,wxEVT_COMMAND_TEXT_UPDATED,(wxObjectEventFunction)&course_designguiDialog::OnTextCtrl6Text);
+    Connect(wxID_ANY,wxEVT_INIT_DIALOG,(wxObjectEventFunction)&course_designguiDialog::OnInit);
     //*)
 
 
@@ -165,7 +165,7 @@ void course_designguiDialog::OnButton1Click1(wxCommandEvent& event)
 void course_designguiDialog::OnButton2Click(wxCommandEvent& event)
 {
      // 创建 ContourDetector 对象
-    ContourDetector contourDetector("2.jpg",120.00);
+    ContourDetector contourDetector("2.jpg",200000.00);
     // 检测轮廓
     contourDetector.detectContours();
     bool success = cv::imwrite("contour_image.jpg", contourDetector.mimage);
@@ -252,7 +252,7 @@ void course_designguiDialog::OnButton2Click(wxCommandEvent& event)
     //在图片上显示字符、铁锈面积和大小
     cv::imshow("Result_image", image_original);
     wxString totalArea_str;
-    totalArea_str.Printf(wxT("%.2f cm"), totalArea); // 使用Printf方法将double转换为字符串
+    totalArea_str.Printf(wxT("%.2f cm^2"), totalArea); // 使用Printf方法将double转换为字符串
     TextCtrl10->SetValue(totalArea_str);
     bool success_3 = cv::imwrite("Result_image.jpg", image_original);
     if (!success_3)

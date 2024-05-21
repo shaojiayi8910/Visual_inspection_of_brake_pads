@@ -39,21 +39,21 @@ class course_designguiDialog: public wxDialog
         //*)
 
         //(*Identifiers(course_designguiDialog)
-        static const wxWindowID ID_BUTTON2;
-        static const wxWindowID ID_STATICBITMAP1;
-        static const wxWindowID ID_STATICBITMAP2;
-        static const wxWindowID ID_STATICBITMAP3;
-        static const wxWindowID ID_TEXTCTRL1;
-        static const wxWindowID ID_TEXTCTRL2;
-        static const wxWindowID ID_TEXTCTRL3;
-        static const wxWindowID ID_TEXTCTRL4;
-        static const wxWindowID ID_TEXTCTRL5;
-        static const wxWindowID ID_TEXTCTRL6;
-        static const wxWindowID ID_TEXTCTRL7;
-        static const wxWindowID ID_TEXTCTRL8;
-        static const wxWindowID ID_STATICBITMAP4;
-        static const wxWindowID ID_TEXTCTRL9;
-        static const wxWindowID ID_TEXTCTRL10;
+        static const long ID_BUTTON2;
+        static const long ID_STATICBITMAP1;
+        static const long ID_STATICBITMAP2;
+        static const long ID_STATICBITMAP3;
+        static const long ID_TEXTCTRL1;
+        static const long ID_TEXTCTRL2;
+        static const long ID_TEXTCTRL3;
+        static const long ID_TEXTCTRL4;
+        static const long ID_TEXTCTRL5;
+        static const long ID_TEXTCTRL6;
+        static const long ID_TEXTCTRL7;
+        static const long ID_TEXTCTRL8;
+        static const long ID_STATICBITMAP4;
+        static const long ID_TEXTCTRL9;
+        static const long ID_TEXTCTRL10;
         //*)
 
         //(*Declarations(course_designguiDialog)

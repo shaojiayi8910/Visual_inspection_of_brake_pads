@@ -7,25 +7,29 @@
 #include"circle.h"
 #include "LineDistanceCalculator.h"
 #include "image_processing.hpp"
+#include "brake_pad.h"
 
 using namespace std;
 using namespace cv;
 
+
+
 int main() {
 
-    //计算羊角距离，主要是内侧距离
-    cv::Mat contours_image = cv::imread("contours_image.jpg");
-    if (contours_image.empty()) {
-        std::cerr << "Error: Couldn't load contours_image ! ." << std::endl;
-        return 1;
-    }
+    // 读取图像
+    cv::Mat image10 = cv::imread("only_shachepian_image.jpg");
 
-    LineDistanceCalculator calculator(contours_image);
-    cv::namedWindow("Coumpter Distance(click mouse)", cv::WINDOW_NORMAL);
-    //cv::imshow("Image1", image1);
-    //cv::setMouseCallback("Image1", LineDistanceCalculator::onMouse, &calculator);
+    // 调用函数计算距离和获取图像
+     // 获取返回的图像和距离
+    cv::Mat Distance_image = calculate_length(image10).result_image;
+    double distance = calculate_length(image10).distance;
+
+    cv::namedWindow("Distance Image", cv::WINDOW_NORMAL);
+    cv::imshow("Distance Image", Distance_image);
 
 
+    // 输出距离
+    std::cout << "Distance: " << distance << " cm" << std::endl;
     //圆孔距离的检测
     cv::Mat image_circle = cv::imread("coumpter_circle.jpg");
     if (image_circle.empty()) {
@@ -34,7 +38,7 @@ int main() {
     }
 
     // 创建 ContourDetector 对象
-    ContourDetector contourDetector("coumpter_circle.jpg",170.00);
+    ContourDetector contourDetector("coumpter_circle.jpg",190000);
     // 检测轮廓
     contourDetector.detectContours();
         // 显示包含轮廓的图像
@@ -97,9 +101,7 @@ int main() {
     //显示原图轮廓
     cv::imshow("Contours on Original Image", contourDetector.mimage);
 
-    //点击鼠标测量羊角尺寸
-    cv::imshow("Coumpter Distance(click mouse)", contours_image);
-    cv::setMouseCallback("Coumpter Distance(click mouse)", LineDistanceCalculator::onMouse, &calculator);
+
 
     //测量圆心距离
     cv::imshow("Detected Circles", image_circle);
@@ -113,4 +115,5 @@ int main() {
     cv::waitKey(0);
     return 0;
 }
+
 
