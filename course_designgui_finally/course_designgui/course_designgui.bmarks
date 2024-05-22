@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<BrowseTracker_layout_file>
+	<ActiveTarget name="Debug" />
+	<File name="brake_pad.h" open="0" top="0" tabpos="0">
+		<Cursor position="353" topLine="0" />
+	</File>
+	<File name="OCRProcessor.cpp" open="1" top="0" tabpos="1">
+		<Cursor position="3149" topLine="76" />
+	</File>
+	<File name="circle.cpp" open="0" top="0" tabpos="3">
+		<Cursor position="2204" topLine="45" />
+	</File>
+	<File name="OCRProcessor.h" open="1" top="0" tabpos="2">
+		<Cursor position="346" topLine="0" />
+	</File>
+	<File name="LineDistanceCalculator.cpp" open="1" top="0" tabpos="5">
+		<Cursor position="1571" topLine="22" />
+	</File>
+	<File name="course_designguiMain.h" open="0" top="0" tabpos="4">
+		<Cursor position="1235" topLine="10" />
+	</File>
+	<File name="contour.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="190" topLine="6" />
+	</File>
+	<File name="course_designguiApp.cpp" open="0" top="0" tabpos="2">
+		<Cursor position="0" topLine="0" />
+	</File>
+	<File name="RustDetection.h" open="0" top="0" tabpos="0">
+		<Cursor position="89" topLine="0" />
+	</File>
+	<File name="course_designguiMain.cpp" open="1" top="0" tabpos="3">
+		<Cursor position="12398" topLine="259" />
+	</File>
+	<File name="circle.h" open="0" top="0" tabpos="2">
+		<Cursor position="166" topLine="0" />
+	</File>
+	<File name="basefunc.h" open="0" top="0" tabpos="3">
+		<Cursor position="0" topLine="0" />
+	</File>
+	<File name="contour.h" open="0" top="0" tabpos="0">
+		<Cursor position="245" topLine="0" />
+	</File>
+	<File name="image_processing.cpp" open="1" top="0" tabpos="7">
+		<Cursor position="1633" topLine="6" />
+	</File>
+	<File name="LineDistanceCalculator.h" open="0" top="0" tabpos="5">
+		<Cursor position="380" topLine="0" />
+	</File>
+	<File name="ImageAnnotator.cpp" open="1" top="0" tabpos="6">
+		<Cursor position="684" topLine="0" />
+	</File>
+	<File name="RustDetection.cpp" open="1" top="1" tabpos="4">
+		<Cursor position="374" topLine="0" />
+		<BrowseMarks positions="" />
+	</File>
+	<File name="brake_pad.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="2517" topLine="59" />
+	</File>
+</BrowseTracker_layout_file>
